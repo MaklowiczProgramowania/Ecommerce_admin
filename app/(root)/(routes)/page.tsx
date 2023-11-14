@@ -9,12 +9,10 @@ export default function SetupPage() {
     const isOpen = useStoreModal((state) => state.isOpen);
 
     useEffect(() => {
-        onOpen();
+        if(!isOpen) {
+            onOpen();
+        }
     }, [isOpen, onOpen]);
 
-    return (
-        <div className='p-4'>
-            Children
-        </div>
-    )
+    return null;
 }
